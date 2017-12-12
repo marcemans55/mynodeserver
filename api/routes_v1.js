@@ -28,10 +28,28 @@ routes.put('/hello', function(req, res){
 	
 	console.dir(body.item);
 	mijnArray.push(body.item);
+	var index = mijnArray.indexOf(body.item);
 	
 	res.contentType('application/json');
 	res.status(200);
-	res.json({tekst: 'Goodbye'});
+	res.json({
+		key : index,
+		item : mijnArray[index]
+	});
+});
+
+routes.delete('/hello', function(req, res){
+	var body = req.body;
+	
+	console.dir(body.index);
+	var delItem = mijnArray.splice(body.index, 1);
+	
+	res.contentType('application/json');
+	res.status(200);
+	res.json({
+		key : body.index,
+		item : delItem[0]
+	});
 });
 
 module.exports = routes;
