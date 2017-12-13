@@ -16,7 +16,7 @@ routes.post('/hello', function(req, res){
 
 	res.status(200);
 	res.json({
-		key : body.index,
+		index : body.index,
 		item : mijnArray[body.index]
 	});
 });
@@ -30,7 +30,7 @@ routes.put('/hello', function(req, res){
 	
 	res.status(200);
 	res.json({
-		key : index,
+		index : index,
 		item : mijnArray[index]
 	});
 });
@@ -43,7 +43,7 @@ routes.delete('/hello', function(req, res){
 	
 	res.status(200);
 	res.json({
-		key : body.index,
+		index : body.index,
 		item : delItem[0]
 	});
 });
