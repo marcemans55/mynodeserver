@@ -6,13 +6,11 @@ var mijnObject = {
 }
 
 routes.get('/hello', function(req, res){
-	res.contentType('application/json');
 	res.status(200);
 	res.json(mijnObject);
 });
 
 routes.get('/goodbye', function(req, res){
-	res.contentType('application/json');
 	res.status(200);
 	res.json({tekst: 'Tot ziens'});
 });
