@@ -48,4 +48,16 @@ routes.delete('/hello', function(req, res){
 	});
 });
 
+routes.get('/hello/error', function (req, res, next) {
+	next('HIER TREEDT EEN ERROR OP');
+});
+
+routes.get('/hello/*', function (req, res, next) {
+	res.status(404);
+	res.json({
+		message: 'Deze endpoint bestaat nog niet'
+	});
+	res.end();
+});
+
 module.exports = routes;
