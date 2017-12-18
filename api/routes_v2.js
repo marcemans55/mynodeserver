@@ -12,7 +12,7 @@ routes.get('/hello', function(req, res){
 
 routes.get('/goodbye', function(req, res){
 	res.status(200);
-	res.json({tekst: 'Tot zins'});
+	res.json({tekst: 'Tot ziens'});
 });
 
 module.exports = routes;
